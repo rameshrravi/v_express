@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:v_express/login/controller/Login_controller.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends GetWidget<LoginController> {
   const LoginScreen({super.key});
 
   @override
@@ -27,7 +29,9 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                controller.loginBtn();
+              },
               child: const Text('Login'),
             ),
           ],
