@@ -1,0 +1,1328 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+
+import '../app_common/constants/size_constant.dart';
+import '../utils/size_utils.dart';
+import 'app_colors.dart';
+
+class AppStyle {
+  double textscale = MediaQuery.of(Get.context!).textScaleFactor;
+
+  static TextStyle txtPoppinsSemiBold20 = TextStyle(
+    color: ColorConstant.blue90001,
+    // fontSize: getFontSize(
+    //   SizeConstant.fontSize_20,
+    // ),
+    fontSize: ScreenUtil().setSp(20),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunito18w500blue90001 = TextStyle(
+    color: ColorConstant.blue90001,
+    fontSize: ScreenUtil().setSp(18),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunitoMedium14Black = TextStyle(
+    color: ColorConstant.black900,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunitoRegular12Gray600 = TextStyle(
+    color: ColorConstant.gray600,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10Blackw400 = TextStyle(
+    color: ColorConstant.black900,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito12w400gray700 = TextStyle(
+    color: ColorConstant.gray700,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito16Whitew500 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito12Black950w400 = TextStyle(
+    color: ColorConstant.black950,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito16w700gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle txtNunito12gray900w500 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito14gray900w500 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito10whiteW600 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunito14Gray202020W600 = TextStyle(
+    color: ColorConstant.gray202020,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunito12Gray202020W500 = TextStyle(
+    color: ColorConstant.gray202020,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito12Gray202020W400 = TextStyle(
+    color: ColorConstant.gray202020,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito12grayw400 = TextStyle(
+    color: ColorConstant.gray403,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunitoMedium14blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtPoppins32w600gray535353 = TextStyle(
+    color: ColorConstant.gray535353,
+    fontSize: ScreenUtil().setSp(32),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunito12w400gray80001 = TextStyle(
+    color: ColorConstant.gray80001,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito12lightBlue800 = TextStyle(
+    color: ColorConstant.lightBlue800,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito14w500Black900 = TextStyle(
+    color: ColorConstant.black900,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito10w400gray700 = TextStyle(
+    color: ColorConstant.gray700,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito12w600gray202020 = TextStyle(
+    color: ColorConstant.gray202020,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunito12w500blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito10w400black800 = TextStyle(
+    color: ColorConstant.black800,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito18w500gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(18),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunitoSans30w700gray700 = TextStyle(
+    color: ColorConstant.gray700,
+    fontSize: ScreenUtil().setSp(30),
+    fontFamily: 'Nunito Sans',
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle txtNunitoSans16w400gray403 = TextStyle(
+    color: ColorConstant.gray403,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito14w400gray82 = TextStyle(
+    color: ColorConstant.gray82,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito14w400gray82Underline = TextStyle(
+    color: ColorConstant.gray82,
+    fontSize: ScreenUtil().setSp(14),
+    decoration: TextDecoration.underline,
+    decorationColor: ColorConstant.gray82,
+    decorationThickness: 2.0,
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito18w400blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(18),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10w600whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtPoppins12w400gray700 = TextStyle(
+    color: ColorConstant.gray700,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito15w400gray403 = TextStyle(
+    color: ColorConstant.gray403,
+    fontSize: ScreenUtil().setSp(15),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito18w400whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(18),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito18w400gray70099 = TextStyle(
+    color: ColorConstant.gray70099,
+    fontSize: ScreenUtil().setSp(18),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10w400black900 = TextStyle(
+    color: ColorConstant.black900,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10w400blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10w400granite_gray = TextStyle(
+    color: ColorConstant.granite_gray,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10w400arsenic = TextStyle(
+    color: ColorConstant.arsenic,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10w400AoGreen = TextStyle(
+    color: ColorConstant.AoGreen,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito18w500blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(18),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunitoSans16w600gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito Sans',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunitoSans14w400gray700 = TextStyle(
+    color: ColorConstant.gray700,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtDMSans20w500whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(20),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito12w700blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w700,
+    letterSpacing: 0.06,
+  );
+
+  static TextStyle txtNunito16w500green = TextStyle(
+    color: ColorConstant.green,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMsans16w500gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans14w400gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtPoppins18w400whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(18),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito16w400gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito14w500gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito12w500lightBlue800 = TextStyle(
+    color: ColorConstant.lightBlue800,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans12w400blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10w400blue90001 = TextStyle(
+    color: ColorConstant.blue90001,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtPoppins14w500whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans18w700black900 = TextStyle(
+    color: ColorConstant.black900,
+    fontSize: ScreenUtil().setSp(18),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle txtDMSans14w500gray202020 = TextStyle(
+    color: ColorConstant.gray202020,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  // Added by Dev
+  static TextStyle txtDMSans14w500white = TextStyle(
+    color: Colors.white,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans12w500gray500 = TextStyle(
+    color: ColorConstant.gray500,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans16w500gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito16w500gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans12w400gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito14w500whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans12w400whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunito16w500red900 = TextStyle(
+    color: ColorConstant.red900,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito16w400black900 = TextStyle(
+    color: ColorConstant.black900,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito14w600black850 = TextStyle(
+    color: ColorConstant.black850,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunito10w400black850 = TextStyle(
+    color: ColorConstant.black850,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10w400whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtDMSans12w500orange = TextStyle(
+    color: ColorConstant.orange,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans16w500green800 = TextStyle(
+    color: ColorConstant.green800,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+    letterSpacing: 0.08,
+  );
+
+  static TextStyle txtNunitow12w500redA700 = TextStyle(
+    color: ColorConstant.redA700,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans9w400gray700 = TextStyle(
+    color: ColorConstant.gray700,
+    fontSize: ScreenUtil().setSp(9),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtDMSans11w500gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(11),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans10w500whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito13w500whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(13),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito12w600whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunito16w700whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle txtNunito12w500gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtRoboto11w400whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(11),
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito14w400whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito12w500whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito16w400lightDarkBlue = TextStyle(
+    color: ColorConstant.lightDarkBlue,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito14w500gray202020 = TextStyle(
+    color: ColorConstant.gray202020,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans18w500 = TextStyle(
+    fontSize: ScreenUtil().setSp(18),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito10w500redA700 = TextStyle(
+    color: ColorConstant.redA700,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito13w400gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(13),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito14w400blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0.40,
+  );
+
+  static TextStyle txtNunito8w400gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(8),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito12w400black850 = TextStyle(
+    color: ColorConstant.black850,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtDMSans10w400blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito12w400granite_gray = TextStyle(
+    color: ColorConstant.granite_gray,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito12w400arsenic = TextStyle(
+    color: ColorConstant.arsenic,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito14w400red900 = TextStyle(
+    color: ColorConstant.red900,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtPoppins12w500gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito10w500green = TextStyle(
+    color: ColorConstant.green,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito16w500blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito14w500gary900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans14w500gary900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito16w600gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle txtNunito16w600withoutcolor = TextStyle(
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunito10w500gray202020 = TextStyle(
+    color: ColorConstant.gray202020,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtPoppins11w400gray700 = TextStyle(
+    color: ColorConstant.gray700,
+    fontSize: ScreenUtil().setSp(11),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtPoppins11w500gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(11),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans10w400whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito14w400green800 = TextStyle(
+    color: ColorConstant.green800,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito14w600gray202020 = TextStyle(
+    color: ColorConstant.gray202020,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunito12w500gray202020 = TextStyle(
+    color: ColorConstant.gray202020,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito12w400gray202020 = TextStyle(
+    color: ColorConstant.gray202020,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtPoppins14w500gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtRoboto9w500blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(9),
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito10w400redA700 = TextStyle(
+    color: ColorConstant.redA700,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito12w400blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtDMSans10w500green = TextStyle(
+    color: ColorConstant.green,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans12w500gray202020 = TextStyle(
+    color: ColorConstant.gray202020,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans8w400black900 = TextStyle(
+    color: ColorConstant.black900,
+    fontSize: ScreenUtil().setSp(8),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10w500blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans12w400gray404040 = TextStyle(
+    color: ColorConstant.gray404040,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtDMSans10w400gray404040 = TextStyle(
+    color: ColorConstant.gray404040,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito9w400gray700 = TextStyle(
+    color: ColorConstant.gray700,
+    fontSize: ScreenUtil().setSp(9),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito16w600red900 = TextStyle(
+    color: ColorConstant.red900,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunito9w700whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(9),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle txtNunito14w400coral_red = TextStyle(
+    color: ColorConstant.coral_red,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10w500gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunitoRegular16Black001 = TextStyle(
+    color: ColorConstant.black,
+    fontSize: getFontSize(
+      SizeConstant.fontSize_16,
+    ),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.normal,
+  );
+
+  static TextStyle txtNunitoNormal10blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: getFontSize(
+      SizeConstant.fontSize_10,
+    ),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunitoNormal12granite_gray = TextStyle(
+    color: ColorConstant.granite_gray,
+    fontSize: getFontSize(
+      SizeConstant.fontSize_12,
+    ),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtDMSansRegular12blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: getFontSize(
+      SizeConstant.fontSize_12,
+    ),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtPoppinsRegular12Gray700 = TextStyle(
+    color: ColorConstant.gray700,
+    fontSize: getFontSize(
+      SizeConstant.fontSize_12,
+    ),
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunitoNormal10arsenic = TextStyle(
+    color: ColorConstant.arsenic,
+    fontSize: getFontSize(
+      SizeConstant.fontSize_10,
+    ),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunitoNormal10red = TextStyle(
+    color: ColorConstant.redA700,
+    fontSize: getFontSize(
+      SizeConstant.fontSize_10,
+    ),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10Gray900w400 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: getFontSize(
+      SizeConstant.fontSize_10,
+    ),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0.07,
+  );
+
+  static TextStyle txtNunito10grayw400 = TextStyle(
+    color: ColorConstant.gray403,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10liteblueffw400 = TextStyle(
+    color: ColorConstant.liteblueff,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtDMSans14w400gray700 = TextStyle(
+    color: ColorConstant.gray700,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito14w400granite_gray = TextStyle(
+    color: ColorConstant.granite_gray,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito12w400black900 = TextStyle(
+    color: ColorConstant.black900,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+
+  // static TextStyle txtNunitoNormal10green = TextStyle(
+  //   color: ColorConstant.green,
+  //   fontSize: getFontSize(
+  //     SizeConstant.fontSize_10,
+  //   ),
+  //   fontFamily: 'Nunito',
+  //   fontWeight: FontWeight.w400,
+  // );
+
+  // static TextStyle txtNunitoMedium13liteblueff = TextStyle(
+  //   color: ColorConstant.liteblueff,
+  //   fontSize: 13.46,
+  //   fontFamily: 'Nunito',
+  //   fontWeight: FontWeight.w400,
+  //   letterSpacing: 0.40,
+  // );
+
+  // static TextStyle txtNunito14 = TextStyle(
+  //   color: ColorConstant.gray900,
+  //   fontSize: getFontSize(
+  //     SizeConstant.fontSize_13,
+  //   ),
+  //   fontFamily: 'Nunito',
+  //   fontWeight: FontWeight.w400,
+  // );
+
+  // static TextStyle txtNunitoMedium16gray900w500 = TextStyle(
+  //   color: ColorConstant.gray900,
+  //   fontSize: getFontSize(
+  //     SizeConstant.fontSize_16,
+  //   ),
+  //   fontFamily: 'Nunito',
+  //   fontWeight: FontWeight.w500,
+  // );
+
+  // static TextStyle txtNunitoNormal12w400 = TextStyle(
+  //   color: ColorConstant.gray900,
+  //   fontSize: getFontSize(
+  //     SizeConstant.fontSize_12,
+  //   ),
+  //   fontFamily: 'Nunito',
+  //   fontWeight: FontWeight.w400,
+  // );
+
+  // static TextStyle txtNunito14w400 = TextStyle(
+  //   color: ColorConstant.gray900,
+  //   fontSize: getFontSize(
+  //     SizeConstant.fontSize_14,
+  //   ),
+  //   fontFamily: 'Nunito',
+  //   fontWeight: FontWeight.w400,
+  // );
+
+  // static TextStyle txtNunitoMedium16WhiteA700w700 = TextStyle(
+  //   color: ColorConstant.whiteA700,
+  //   fontSize: getFontSize(
+  //     SizeConstant.fontSize_14,
+  //   ),
+  //   fontFamily: 'Nunito',
+  //   fontWeight: FontWeight.w700,
+  // );
+
+  // static TextStyle txtNunitoSmall12whiteA700 = TextStyle(
+  //   color: ColorConstant.whiteA700,
+  //   fontSize:   getFontSize(
+  //      SizeConstant.fontSize_12,
+  //    ),
+  //   fontFamily: 'Nunito',
+  //   fontWeight: FontWeight.w600,
+  // );
+
+  // static TextStyle txtNunito13white = TextStyle(
+  //   color: ColorConstant.whiteA700,
+  //   fontSize: getFontSize(
+  //     SizeConstant.fontSize_13,
+  //   ),
+  //   fontFamily: 'Nunito',
+  //   fontWeight: FontWeight.w500,
+  // );
+
+  // static TextStyle txtDMSansSmall10 = TextStyle(
+  //   color: ColorConstant.whiteA700,
+  //   fontSize: getFontSize(
+  //     SizeConstant.fontSize_10,
+  //   ),
+  //   fontFamily: 'DM Sans',
+  //   fontWeight: FontWeight.w500,
+  // );
+
+  // static TextStyle txtDMSansSmall11 = TextStyle(
+  //   color: ColorConstant.gray900,
+  //   fontSize: getFontSize(
+  //     SizeConstant.fontSize_11,
+  //   ),
+  //   fontFamily: 'DM Sans',
+  //   fontWeight: FontWeight.w500,
+  // );
+
+  // static TextStyle txtDMSansSmall09 = TextStyle(
+  //   color: ColorConstant.gray700,
+  //   fontSize: getFontSize(
+  //     SizeConstant.fontSize_9,
+  //   ),
+  //   fontFamily: 'DM Sans',
+  //   fontWeight: FontWeight.w400,
+  // );
+
+  // static TextStyle txtNunito10w500red = TextStyle(
+  //   color: ColorConstant.redA700,
+  //   fontSize: getFontSize(
+  //     SizeConstant.fontSize_12,
+  //   ),
+  //   fontFamily: 'Nunito',
+  //   fontWeight: FontWeight.w500,
+  // );
+
+  // static TextStyle txtNunitoMedium16GreenA800 = TextStyle(
+  //   color: ColorConstant.green800,
+  //   fontSize: getFontSize(
+  //     SizeConstant.fontSize_16,
+  //   ),
+  //   fontFamily: 'DM Sans',
+  //   fontWeight: FontWeight.w500,
+  //   letterSpacing: 0.08,
+  // );
+
+  // static TextStyle txtDMSansOrange14 = TextStyle(
+  //   color: ColorConstant.orange,
+  //   fontSize: getFontSize(16),
+  //   fontFamily: 'DM Sans',
+  //   fontWeight: FontWeight.w500,
+  // );
+
+  // static TextStyle txtDMsans14w500gray202020 = TextStyle(
+  //   color: ColorConstant.gray202020,
+  //   fontSize: ScreenUtil().setSp(14),
+  //   fontFamily: 'DM Sans',
+  //   fontWeight: FontWeight.w500,
+  // );
+
+  // static TextStyle txtNunitoRegular10white10 = TextStyle(
+  //   color: ColorConstant.white,
+  //   fontSize: getFontSize(
+  //     SizeConstant.fontSize_10,
+  //   ),
+  //   fontFamily: 'Nunito',
+  //   fontWeight: FontWeight.w400,
+  // );
+  /// *starts here
+
+  static TextStyle txtNunito10w400white = TextStyle(
+    color: ColorConstant.white,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtDMsans14w500gray202020 = TextStyle(
+    color: ColorConstant.gray202020,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans12w500Orange = TextStyle(
+    color: ColorConstant.orange,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtDMSans16w500GreenA800 = TextStyle(
+    color: ColorConstant.green800,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+    letterSpacing: 0.08,
+  );
+
+  static TextStyle txtNunitow12redA700 = TextStyle(
+    color: ColorConstant.redA700,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  /// * second starts
+  static TextStyle txtNunito14w400gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito12w400gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito13w400liteblueff = TextStyle(
+    color: ColorConstant.liteblueff,
+    fontSize: 13.46,
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0.40,
+  );
+
+  static TextStyle txtNunito10w400green = TextStyle(
+    color: ColorConstant.green,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito10w400gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtDMSans16w700black950 = TextStyle(
+    color: ColorConstant.black950,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle txtNunito11w600gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(11),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunito11w700gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(11),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle txtDMSans10w400gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito8w500whiteA700 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: ScreenUtil().setSp(8),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtNunito10w400gray403 = TextStyle(
+    color: ColorConstant.gray403,
+    fontSize: ScreenUtil().setSp(10),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtNunito20w500gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(20),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+    static TextStyle txtNunito18w400gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(SizeConstant.fontSize_18),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+   static TextStyle txtNunito14w400gray700 = TextStyle(
+    color: ColorConstant.gray700,
+    fontSize: ScreenUtil().setSp(SizeConstant.fontSize_14),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle txtDMSams14w500gray900 = TextStyle(
+    color: ColorConstant.gray900,
+    fontSize: ScreenUtil().setSp(SizeConstant.fontSize_14),
+    fontFamily: 'DM Sans',
+    fontWeight: FontWeight.w500,
+  );
+  static TextStyle txtNunito16w500black950 = TextStyle(
+    color: ColorConstant.black950,
+    fontSize: ScreenUtil().setSp(SizeConstant.fontSize_16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w500,
+  );
+
+
+   static TextStyle
+      txtNunito12w400gray979797 =
+      TextStyle(
+    color:
+        ColorConstant.gray_979797,
+    fontSize:
+        ScreenUtil().setSp(SizeConstant.fontSize_12),
+    fontFamily:
+        'Nunito',
+    fontWeight:
+        FontWeight.w400,
+  );
+  
+   static TextStyle txtNunito16w600blue900 = TextStyle(
+    color: ColorConstant.blue900,
+    fontSize: ScreenUtil().setSp(16),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtNunito12w400green = TextStyle(
+    color: ColorConstant.green,
+    fontSize: ScreenUtil().setSp(12),
+    fontFamily: 'Nunito',
+    fontWeight: FontWeight.w400,
+  );
+  /** ends here design corrections */
+}
