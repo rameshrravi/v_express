@@ -21,7 +21,10 @@ class HomeScreen extends GetWidget<HomeController> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      print("dkjbsdbsadsadsad");
+                      controller.onPressAddMethod();
+                    },
                     child: Card(
                       elevation: 20,
                       shadowColor: Colors.black,
