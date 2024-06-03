@@ -4,6 +4,7 @@ import 'package:v_express/app_comman/binding/initial_bindings.dart';
 import 'package:v_express/app_comman/screens/splash_screen.dart';
 import 'package:v_express/login/screens/login_screen.dart';
 import 'package:v_express/routes/app_routes.dart';
+import 'package:v_express/translations/language_translations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +27,14 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
       ),
       home: const SplashScreen(),
+      translations: LanguageTranslations(),
+      //locale: Get.deviceLocale, //for setting localization strings
+      fallbackLocale: const Locale('en', 'US'),
+      //locale: TranslationService.fallbackLocale ,
+      locale: Get.deviceLocale,
+      supportedLocales: const [
+        Locale('en', 'US'),
+      ],
     );
   }
 }

@@ -16,45 +16,71 @@ class AddbusScreen extends GetWidget<AddbusController> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              const TextField(
-                decoration: InputDecoration(
-                  labelText: 'Bus Name',
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: controller.busName,
+                  decoration: const InputDecoration(
+                    labelText: 'Bus Name',
+                  ),
                 ),
               ),
               const SizedBox(height: 16),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'From',
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextField(
+                        controller: controller.busStartFrom,
+                        decoration: const InputDecoration(
+                          labelText: 'From',
+                        ),
                       ),
                     ),
                   ),
                   Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Time',
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextField(
+                        onTap: () =>
+                            controller.showTimepickerFrom(Get.context!, 0),
+                        readOnly: true,
+                        controller: controller.fromTime,
+                        decoration: const InputDecoration(
+                          labelText: 'Time',
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'To',
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextField(
+                        controller: controller.busEnd,
+                        decoration: const InputDecoration(
+                          labelText: 'To',
+                        ),
                       ),
                     ),
                   ),
                   Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Time',
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextField(
+                        onTap: () =>
+                            controller.showTimepickerFrom(Get.context!, 1),
+                        readOnly: true,
+                        controller: controller.toTime,
+                        decoration: const InputDecoration(
+                          labelText: 'Time',
+                        ),
                       ),
                     ),
                   ),
@@ -66,12 +92,60 @@ class AddbusScreen extends GetWidget<AddbusController> {
                   Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextButton(
-                          onPressed: () {}, child: const Text("Add"))),
+                          onPressed: () {
+                            controller.selectedIndex.value =
+                                controller.selectedIndex.value + 1;
+                            print(controller.selectedIndex.value);
+                          },
+                          child: const Text("Add Route"))),
                 ],
               ),
+              Obx(() => SizedBox(
+                    height: controller.selectedIndex.value * 50.0,
+                    child: ListView.builder(
+                      itemCount: controller.selectedIndex.value,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Expanded(
+                              child: Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    labelText: 'Route Name',
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const Expanded(
+                              child: Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    labelText: 'Time',
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 25.0),
+                              child: TextButton(
+                                onPressed: () {},
+                                child: const Text("Remove"),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                  )),
               ElevatedButton(
                 onPressed: () {},
-                child: const Text('Login'),
+                child: TextButton(
+                  onPressed: () {},
+                  child: const Text("Save"),
+                ),
               ),
             ],
           ),
