@@ -7,4 +7,8 @@ class LoginController extends GetxController {
   void loginBtn() {
     Get.toNamed(AppRoutes.homeScreen);
   }
+
+  void onPressSignUp() {
+    Get.toNamed(AppRoutes.signupScreen);
+  }
 }

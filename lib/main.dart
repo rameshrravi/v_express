@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:v_express/app_comman/binding/initial_bindings.dart';
 import 'package:v_express/app_comman/screens/splash_screen.dart';
-import 'package:v_express/login/screens/login_screen.dart';
+import 'package:v_express/login_signup/screens/login_screen.dart';
 import 'package:v_express/routes/app_routes.dart';
 import 'package:v_express/translations/language_translations.dart';
 
