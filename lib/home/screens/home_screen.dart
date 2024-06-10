@@ -26,13 +26,31 @@ class HomeScreen extends GetWidget<HomeController> {
                       controller.onPressAddMethod();
                     },
                     child: Card(
-                      elevation: 20,
-                      shadowColor: Colors.black,
-                      color: Colors.greenAccent[100],
-                      child: const SizedBox(
-                        height: 100,
-                        width: 100,
-                        child: Center(child: Text('Bus Timing')),
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      color: const Color.fromRGBO(185, 246, 202, 1),
+                      child: const Padding(
+                        padding: EdgeInsets.all(10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Bus Timing',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            Icon(
+                              Icons.bus_alert_outlined,
+                              size: 60,
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),

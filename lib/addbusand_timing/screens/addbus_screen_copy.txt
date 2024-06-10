@@ -1,0 +1,134 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:v_express/addbusand_timing/controller/addbus_controller.dart';
+
+class AddbusScreen extends GetWidget<AddbusController> {
+  const AddbusScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Add Bus Details'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          child: Column(
+            children: [
+              TextFormField(
+                controller: controller.busName,
+                decoration: const InputDecoration(
+                  labelText: 'Bus Name',
+                ),
+              ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: controller.busStartFrom,
+                      decoration: const InputDecoration(
+                        labelText: 'From',
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: TextFormField(
+                      onTap: () =>
+                          controller.showTimepickerFrom(Get.context!, 0),
+                      readOnly: true,
+                      controller: controller.fromTime,
+                      decoration: const InputDecoration(
+                        labelText: 'Time',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: controller.busEnd,
+                      decoration: const InputDecoration(
+                        labelText: 'To',
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: TextFormField(
+                      onTap: () =>
+                          controller.showTimepickerFrom(Get.context!, 1),
+                      readOnly: true,
+                      controller: controller.toTime,
+                      decoration: const InputDecoration(
+                        labelText: 'Time',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              Obx(
+                () => ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: controller.selectedIndex.value,
+                  itemBuilder: (BuildContext context, int index) {
+                    return _buildRoute(index);
+                  },
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  controller.selectedIndex.value++;
+                },
+                child: const Text("Add Route"),
+              ),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text("Save"),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRoute(int index) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            child: TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Route Name',
+              ),
+            ),
+          ),
+          Expanded(
+            child: TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Time',
+              ),
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              controller.selectedIndex.value--;
+            },
+            icon: const Icon(Icons.remove),
+          ),
+        ],
+      ),
+    );
+  }
+}

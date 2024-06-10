@@ -11,145 +11,177 @@ class AddbusScreen extends GetWidget<AddbusController> {
       appBar: AppBar(
         title: const Text('Add Bus Details'),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                  controller: controller.busName,
-                  decoration: const InputDecoration(
-                    labelText: 'Bus Name',
-                  ),
+              TextFormField(
+                controller: controller.busName,
+                decoration: InputDecoration(
+                  hintText: "Bus Name",
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(18),
+                      borderSide: BorderSide.none),
+                  fillColor: Colors.purple.withOpacity(0.1),
+                  filled: true,
+                  prefixIcon: const Icon(Icons.person),
                 ),
               ),
               const SizedBox(height: 16),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        controller: controller.busStartFrom,
-                        decoration: const InputDecoration(
-                          labelText: 'From',
-                        ),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        hintText: 'Start From',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            borderSide: BorderSide.none),
+                        fillColor: Colors.purple.withOpacity(0.1),
+                        filled: true,
+                        prefixIcon: const Icon(Icons.person),
                       ),
                     ),
                   ),
+                  const SizedBox(width: 8),
                   Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        onTap: () =>
-                            controller.showTimepickerFrom(Get.context!, 0),
-                        readOnly: true,
-                        controller: controller.fromTime,
-                        decoration: const InputDecoration(
-                          labelText: 'Time',
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        controller: controller.busEnd,
-                        decoration: const InputDecoration(
-                          labelText: 'To',
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        onTap: () =>
-                            controller.showTimepickerFrom(Get.context!, 1),
-                        readOnly: true,
-                        controller: controller.toTime,
-                        decoration: const InputDecoration(
-                          labelText: 'Time',
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextButton(
-                          onPressed: () {
-                            controller.selectedIndex.value =
-                                controller.selectedIndex.value + 1;
-                            print(controller.selectedIndex.value);
-                          },
-                          child: const Text("Add Route"))),
-                ],
-              ),
-              Obx(() => SizedBox(
-                    height: controller.selectedIndex.value * 50.0,
-                    child: ListView.builder(
-                      itemCount: controller.selectedIndex.value,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    labelText: 'Route Name',
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    labelText: 'Time',
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 25.0),
-                              child: TextButton(
-                                onPressed: () {},
-                                child: const Text("Remove"),
-                              ),
-                            ),
-                          ],
-                        );
+                    child: TextFormField(
+                      readOnly: true,
+                      onTap: () {
+                        controller.showTimepickerFrom(Get.context!, 0);
                       },
+                      controller: controller.fromTime,
+                      decoration: InputDecoration(
+                        hintText: 'Time',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            borderSide: BorderSide.none),
+                        fillColor: Colors.purple.withOpacity(0.1),
+                        filled: true,
+                        prefixIcon: const Icon(Icons.access_time),
+                      ),
                     ),
-                  )),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        hintText: 'End At',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            borderSide: BorderSide.none),
+                        fillColor: Colors.purple.withOpacity(0.1),
+                        filled: true,
+                        prefixIcon: const Icon(Icons.person),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: TextFormField(
+                      onTap: () {
+                        controller.showTimepickerFrom(Get.context!, 1);
+                      },
+                      readOnly: true,
+                      controller: controller.toTime,
+                      decoration: InputDecoration(
+                        hintText: 'Time',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            borderSide: BorderSide.none),
+                        fillColor: Colors.purple.withOpacity(0.1),
+                        filled: true,
+                        prefixIcon: const Icon(Icons.access_time),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: controller.selectedIndex.value,
+                itemBuilder: (BuildContext context, int index) {
+                  return _buildRoute(index);
+                },
+              ),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  controller.selectedIndex.value++;
+                },
+                child: const Text("Add Route"),
+              ),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {},
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text("Save"),
-                ),
+                child: const Text("Save"),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildTextField(String labelText,
+      [TextEditingController? controller]) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.white,
+      ),
+      child: TextFormField(
+        controller: controller,
+        decoration: InputDecoration(
+          labelText: labelText,
+          border: InputBorder.none,
+          focusedBorder: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          errorBorder: InputBorder.none,
+          disabledBorder: InputBorder.none,
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 10,
+            horizontal: 16,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRoute(int index) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            child: TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Route Name',
+              ),
+            ),
+          ),
+          Expanded(
+            child: TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Time',
+              ),
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              controller.selectedIndex.value--;
+            },
+            icon: const Icon(Icons.remove),
+          ),
+        ],
       ),
     );
   }
