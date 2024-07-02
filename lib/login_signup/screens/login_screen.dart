@@ -11,65 +11,83 @@ class LoginScreen extends GetWidget<LoginController> {
       appBar: AppBar(
         title: const Text('Login Screen'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              decoration: InputDecoration(
-                  hintText: "Username",
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(18),
-                      borderSide: BorderSide.none),
-                  fillColor: Colors.purple.withOpacity(0.1),
-                  filled: true,
-                  prefixIcon: const Icon(Icons.person)),
-            ),
-            const SizedBox(height: 16),
-            TextField(
-              decoration: InputDecoration(
-                hintText: "Password",
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(18),
-                    borderSide: BorderSide.none),
-                fillColor: Colors.purple.withOpacity(0.1),
-                filled: true,
-                prefixIcon: const Icon(Icons.password),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 40),
+          height: MediaQuery.of(context).size.height - 70,
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              const Column(
+                children: <Widget>[
+                  Text(
+                    "Login",
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
-              obscureText: true,
-            ),
-            const SizedBox(height: 16),
-            Container(
-                padding: const EdgeInsets.only(top: 3, left: 3),
-                child: ElevatedButton(
-                  onPressed: () {
-                    controller.loginBtn();
-                  },
-                  style: ElevatedButton.styleFrom(
-                    shape: const StadiumBorder(),
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    backgroundColor: Colors.purple,
+              Column(
+                children: <Widget>[
+                  TextField(
+                    decoration: InputDecoration(
+                        hintText: "Username",
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                            borderSide: BorderSide.none),
+                        fillColor: Colors.purple.withOpacity(0.1),
+                        filled: true,
+                        prefixIcon: const Icon(Icons.person)),
                   ),
-                  child: const Text(
-                    "Login     ",
-                    style: TextStyle(fontSize: 20),
+                  const SizedBox(height: 20),
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: "Password",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(18),
+                          borderSide: BorderSide.none),
+                      fillColor: Colors.purple.withOpacity(0.1),
+                      filled: true,
+                      prefixIcon: const Icon(Icons.password),
+                    ),
+                    obscureText: true,
                   ),
-                )),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text("Dont have an account? "),
-                TextButton(
-                    onPressed: () {
-                      controller.onPressSignUp();
-                    },
+                ],
+              ),
+              Container(
+                  padding: const EdgeInsets.only(top: 1, left: 3),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      shape: const StadiumBorder(),
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      backgroundColor: Colors.purple,
+                    ),
                     child: const Text(
-                      "Sign Up",
-                      style: TextStyle(color: Colors.purple),
-                    ))
-              ],
-            )
-          ],
+                      "Login",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  )),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text("You haven't Account ?"),
+                  TextButton(
+                      onPressed: () {
+                        controller.onPressSignUp();
+                      },
+                      child: const Text(
+                        "Signup",
+                        style: TextStyle(color: Colors.purple),
+                      ))
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
