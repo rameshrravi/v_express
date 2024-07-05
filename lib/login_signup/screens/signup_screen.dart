@@ -98,7 +98,7 @@ class SignupScreen extends GetWidget<SignupController> {
                     ),
                     child: const Text(
                       "Sign up",
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   )),
               const Center(child: Text("Or")),

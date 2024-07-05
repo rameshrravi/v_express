@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:get/get.dart';
-import 'package:v_express/addbusand_timing/binding/addbus_binding.dart';
-import 'package:v_express/addbusand_timing/screens/addbus_screen.dart';
+import 'package:v_express/add_bus_timing/binding/addbus_binding.dart';
+import 'package:v_express/add_bus_timing/screens/addbus_screen.dart';
 import 'package:v_express/app_comman/binding/splash_binding.dart';
 import 'package:v_express/app_comman/screens/splash_screen.dart';
 import 'package:v_express/home/binding/home_binding.dart';

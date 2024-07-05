@@ -8,9 +8,6 @@ class LoginScreen extends GetWidget<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login Screen'),
-      ),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -28,6 +25,9 @@ class LoginScreen extends GetWidget<LoginController> {
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                 ],
               ),
@@ -56,12 +56,15 @@ class LoginScreen extends GetWidget<LoginController> {
                     ),
                     obscureText: true,
                   ),
+                  const SizedBox(height: 20),
                 ],
               ),
               Container(
-                  padding: const EdgeInsets.only(top: 1, left: 3),
+                  padding: const EdgeInsets.only(top: 3, left: 3),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      controller.loginBtn();
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: const StadiumBorder(),
                       padding: const EdgeInsets.symmetric(vertical: 16),
@@ -69,7 +72,7 @@ class LoginScreen extends GetWidget<LoginController> {
                     ),
                     child: const Text(
                       "Login",
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   )),
               Row(

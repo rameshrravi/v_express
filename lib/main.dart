@@ -24,9 +24,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: false,
+        useMaterial3: true,
       ),
       home: const SplashScreen(),
+
       translations: LanguageTranslations(),
       //locale: Get.deviceLocale, //for setting localization strings
       fallbackLocale: const Locale('en', 'US'),
