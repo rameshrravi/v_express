@@ -20,21 +20,24 @@ class BusDetailsScreen extends GetWidget<SearchbusController> {
         title: const Text('Bus Details'),
       ),
       body: SingleChildScrollView(
-        child: EasyStepper(activeStep: activeStep, steps: [
-          EasyStep(
-            customStep: ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: Opacity(
-                opacity: activeStep >= 0 ? 1 : 0.3,
-                child: Image.asset('assets/1.png'),
+        child: EasyStepper(
+            direction: Axis.vertical,
+            activeStep: activeStep,
+            steps: [
+              EasyStep(
+                customStep: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Opacity(
+                    opacity: activeStep >= 0 ? 1 : 0.3,
+                    child: Image.asset('assets/1.png'),
+                  ),
+                ),
+                customTitle: const Text(
+                  'Dash 1',
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
-            customTitle: const Text(
-              'Dash 1',
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ]),
+            ]),
       ),
     );
   }
