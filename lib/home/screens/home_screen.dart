@@ -54,14 +54,19 @@ class HomeScreen extends GetWidget<HomeController> {
                       ),
                     ),
                   ),
-                  Card(
-                    elevation: 50,
-                    shadowColor: Colors.black,
-                    color: Colors.greenAccent[100],
-                    child: const SizedBox(
-                      height: 100,
-                      width: 100,
-                      child: Center(child: Text('News')),
+                  InkWell(
+                    onTap: () {
+                      controller.onPressSearch();
+                    },
+                    child: Card(
+                      elevation: 50,
+                      shadowColor: Colors.black,
+                      color: Colors.greenAccent[100],
+                      child: const SizedBox(
+                        height: 100,
+                        width: 100,
+                        child: Center(child: Text('News')),
+                      ),
                     ),
                   ),
                   Card(

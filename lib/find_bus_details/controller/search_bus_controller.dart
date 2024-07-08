@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:v_express/find_bus_details/screens/bus_details.dart';
 import 'package:v_express/routes/app_routes.dart';
 
 class SearchbusController extends GetxController {
@@ -15,7 +16,7 @@ class SearchbusController extends GetxController {
   @override
   void onInit() {}
   void loginBtn() {
-    Get.toNamed(AppRoutes.homeScreen);
+    Get.to(BusDetailsScreen());
   }
 
   Future<void> showTimepickerMethod(BuildContext context) async {

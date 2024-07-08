@@ -8,4 +8,8 @@ class HomeController extends GetxController {
   void onPressAddMethod() {
     Get.toNamed(AppRoutes.addbusScreen);
   }
+
+  void onPressSearch() {
+    Get.toNamed(AppRoutes.searchBusScreen);
+  }
 }
