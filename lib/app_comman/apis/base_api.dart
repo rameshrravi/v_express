@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 abstract class BaseAPI {
-  final String apiBaseUrl = 'https://devapi2.kpostindia.com/v2/';
+  final String apiBaseUrl = 'https://licettechnologies.com/busBooking/api/v1/';
   // final String apiBaseUrl = 'http://192.168.2.24:8989/v2/';
 
   final String apiKmailBaseUrl = 'https://kmail5.kpostindia.com/kmail5/v2/';
