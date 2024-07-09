@@ -11,18 +11,17 @@ class LoginController extends GetxController {
   LoginResponseModel? loginResponseModel;
   @override
   void onInit() {}
-  void loginBtn() {
-    Get.toNamed(AppRoutes.homeScreen);
-  }
-
-  void onPressSignUp() async {
+  Future<void> loginBtn() async {
     apiResponseModel = await loginSignupBL.login("9626061922", "123456");
 
     if (apiResponseModel.responseCode == 200) {
       loginResponseModel = apiResponseModel.model as LoginResponseModel;
       print(loginResponseModel!.firstName);
     }
+    Get.toNamed(AppRoutes.homeScreen);
+  }
 
-    //Get.toNamed(AppRoutes.signupScreen);
+  void onPressSignUp() async {
+    Get.toNamed(AppRoutes.signupScreen);
   }
 }
