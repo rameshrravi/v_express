@@ -17,8 +17,8 @@ class LoginController extends GetxController {
     if (apiResponseModel.responseCode == 200) {
       loginResponseModel = apiResponseModel.model as LoginResponseModel;
       print(loginResponseModel!.firstName);
+      Get.toNamed(AppRoutes.homeScreen);
     }
-    Get.toNamed(AppRoutes.homeScreen);
   }
 
   void onPressSignUp() async {
