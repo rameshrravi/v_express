@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1025471502834",
+    "project_id": "vexpress-5caff",
+    "storage_bucket": "vexpress-5caff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025471502834:android:7d1769d1cab1db3a20b36b",
+        "android_client_info": {
+          "package_name": "com.example.v_express"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlD9GMC8teDJoGLoKMpYXyBNMBxKG54R8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

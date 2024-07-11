@@ -119,23 +119,24 @@ class SignupScreen extends GetWidget<SignupController> {
                   ],
                 ),
                 child: TextButton(
-                  onPressed: () {},
-                  child: Row(
+                  onPressed: () {
+
+                    controller.handleGoogleSignin();
+                  },
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                         height: 30.0,
                         width: 30.0,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(
-                                  'assets/images/login_signup/google.png'),
-                              fit: BoxFit.cover),
-                          shape: BoxShape.circle,
-                        ),
+                        // decoration: const BoxDecoration(
+                        //   image: DecorationImage(
+                        //       image: AssetImage(''), fit: BoxFit.cover),
+                        //   shape: BoxShape.circle,
+                        // ),
                       ),
-                      const SizedBox(width: 18),
-                      const Text(
+                      SizedBox(width: 18),
+                      Text(
                         "Sign In with Google",
                         style: TextStyle(
                           fontSize: 16,

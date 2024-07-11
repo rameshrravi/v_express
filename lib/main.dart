@@ -1,12 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:v_express/app_comman/binding/initial_bindings.dart';
 import 'package:v_express/app_comman/screens/splash_screen.dart';
+import 'package:v_express/firebase_options.dart';
 import 'package:v_express/login_signup/screens/login_screen.dart';
 import 'package:v_express/routes/app_routes.dart';
 import 'package:v_express/translations/language_translations.dart';
 
-void main() {
+Future<void> main() async {
+   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
