@@ -34,8 +34,9 @@ class LoginScreen extends GetWidget<LoginController> {
               Column(
                 children: <Widget>[
                   TextField(
+                    controller: controller.mobileNoController,
                     decoration: InputDecoration(
-                        hintText: "Username",
+                        hintText: "email or mobile number",
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(18),
                             borderSide: BorderSide.none),
@@ -45,6 +46,7 @@ class LoginScreen extends GetWidget<LoginController> {
                   ),
                   const SizedBox(height: 20),
                   TextField(
+                    controller: controller.passwordController,
                     decoration: InputDecoration(
                       hintText: "Password",
                       border: OutlineInputBorder(
@@ -63,7 +65,7 @@ class LoginScreen extends GetWidget<LoginController> {
                   padding: const EdgeInsets.only(top: 3, left: 3),
                   child: ElevatedButton(
                     onPressed: () {
-                      controller.loginBtn();
+                      controller.onPressLogin();
                     },
                     style: ElevatedButton.styleFrom(
                       shape: const StadiumBorder(),

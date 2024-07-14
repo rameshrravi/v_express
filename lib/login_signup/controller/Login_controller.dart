@@ -9,19 +9,46 @@ class LoginController extends GetxController {
   ApiResponseModel apiResponseModel = ApiResponseModel();
   LoginSignupBL loginSignupBL = LoginSignupBL();
   LoginResponseModel? loginResponseModel;
+  TextEditingController mobileNoController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   void onInit() {}
   Future<void> loginBtn() async {
-    apiResponseModel = await loginSignupBL.login("9626061922", "123456");
-
+    apiResponseModel = await loginSignupBL.login(
+        mobileNoController.text, passwordController.text);
     if (apiResponseModel.responseCode == 200) {
       loginResponseModel = apiResponseModel.model as LoginResponseModel;
-      print(loginResponseModel!.firstName);
-      Get.toNamed(AppRoutes.homeScreen);
+      Get.offAllNamed(AppRoutes.homeScreen);
     }
   }
 
-  void onPressSignUp() async {
+  void onPressLogin() async {
+    bool validateMobileNo() =>
+        mobileNoController.text.isNotEmpty &&
+        mobileNoController.text.length == 10;
+    bool validateEmail() => RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(mobileNoController.text);
+    bool validatePassword() => passwordController.text.length >= 6;
+
+    if (!mobileNoController.text.isNotEmpty) {
+      showSnackbar("Enter Mobile Number or Email");
+      // All validation pass
+    } else if (!validatePassword()) {
+      showSnackbar("Enter Password");
+    } else {
+      loginBtn();
+    }
+  }
+
+  void onPressSignUp() {
     Get.toNamed(AppRoutes.signupScreen);
+  }
+
+  void showSnackbar(String txtmessage) {
+    Get.showSnackbar(GetSnackBar(
+      message: txtmessage,
+      duration: const Duration(seconds: 2),
+    ));
   }
 }

@@ -5,7 +5,9 @@ import 'package:dio/dio.dart';
 import 'package:v_express/app_comman/apis/api_response_model.dart';
 import 'package:v_express/app_comman/apis/base_api.dart';
 import 'package:v_express/login_signup/models/api_models/request_models/login_request_model.dart';
+import 'package:v_express/login_signup/models/api_models/request_models/signup_request_model.dart';
 import 'package:v_express/login_signup/models/api_models/response_models/login_response_model.dart';
+import 'package:v_express/login_signup/models/api_models/response_models/signup_response_model.dart';
 
 class LoginAndSignupAPI extends BaseAPI {
   @override
@@ -51,7 +53,8 @@ class LoginAndSignupAPI extends BaseAPI {
             ),
       );
       if (response.statusCode == 200) {
-        loginResponseModel = LoginResponseModel.fromJson(jsonDecode(response.data));
+        loginResponseModel =
+            LoginResponseModel.fromJson(jsonDecode(response.data));
         apiResponseModel.model = loginResponseModel;
         apiResponseModel.responseCode = response.statusCode;
         apiResponseModel.message = '';
@@ -59,6 +62,40 @@ class LoginAndSignupAPI extends BaseAPI {
         apiResponseModel.responseCode = response.statusCode;
 
         apiResponseModel.message = "";
+      }
+    } catch (e) {
+      apiResponseModel.responseCode = -1;
+      apiResponseModel.message = "Error:$e";
+    } finally {}
+
+    return apiResponseModel;
+  }
+
+  Future<ApiResponseModel> signup(
+      SignupRequestModel? signupRequestModel) async {
+    Response response;
+    ApiResponseModel apiResponseModel = ApiResponseModel();
+    Dio dio = Dio();
+    SignupResponseModel? signupResponseModel;
+    print(jsonEncode(signupRequestModel));
+    try {
+      response = await dio.post(
+        '${apiBaseUrl}register.php',
+        data: jsonEncode(signupRequestModel),
+        options: Options(
+            //headers: await getApiHeaders(true, accessToken),
+            ),
+      );
+      if (response.statusCode == 200) {
+        signupResponseModel =
+            SignupResponseModel.fromJson(jsonDecode(response.data));
+        apiResponseModel.model = signupResponseModel;
+        apiResponseModel.responseCode = response.statusCode;
+        apiResponseModel.message = signupResponseModel.response;
+      } else {
+        apiResponseModel.responseCode = response.statusCode;
+
+        apiResponseModel.message = "Registration Failed";
       }
     } catch (e) {
       apiResponseModel.responseCode = -1;
