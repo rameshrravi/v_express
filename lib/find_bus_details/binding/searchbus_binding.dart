@@ -6,5 +6,7 @@ class SearchBusBinding extends Bindings {
   @override
   void dependencies() {
     Get.put(SearchbusController());
+
+    
   }
 }
