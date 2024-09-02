@@ -10,3 +10,7 @@ class BusInfoAllRoutesChangeName extends BusInfoState {
 
   BusInfoAllRoutesChangeName({required this.name});
 }
+class UILoginButtonPress extends  BusInfoState {
+
+  UILoginButtonPress( );
+}

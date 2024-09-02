@@ -12,8 +12,16 @@ class BusInfoBloc extends Bloc<BusInfoEvent, BusInfoState> {
     on<BusInfoAllRoutes>((event, emit) {
       emit(BusInfoAllRoutesChangeName(name: 'Hello World!'));
     });
-  }
 
+      
+     on<BusInfoAllRoutes>((event, emit) {
+      _onSubmitted( event, emit);
+      emit(UILoginButtonPress());
+    });
+  }
+void _onSubmitted(BusInfoAllRoutes event, Emitter<BusInfoState> emit) {
+  print("kjbsbsSs");
+}
   String _busRoutespaths() {
     return '';
   }
