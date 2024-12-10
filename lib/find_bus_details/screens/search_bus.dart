@@ -10,63 +10,97 @@ class SearchBusScreen extends GetWidget<SearchbusController> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         title: const Text('Search Bus'),
       ),
       body: Column(
         children: [
-          Row(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: TextField(
-                  decoration: const InputDecoration(
-                    hintText: 'Enter your source',
+                  decoration: InputDecoration(
+                    hintText: 'Enter your district',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey[200],
                   ),
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    controller.district.value = value;
+                  },
                 ),
               ),
-              const SizedBox(width: 10),
-              Expanded(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: TextField(
-                  decoration: const InputDecoration(
-                    hintText: 'Enter your destination',
+                  decoration: InputDecoration(
+                    hintText: 'Enter your source',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey[200],
                   ),
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    controller.source.value = value;
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Enter your destination',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                  ),
+                  onChanged: (value) {
+                    controller.destination.value = value;
+                  },
                 ),
               ),
             ],
           ),
           const SizedBox(height: 10),
           Expanded(
-            child: ListView.builder(
-              itemCount: 5,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: InkWell(
-                    onTap: () {
-                      controller.loginBtn();
-                    },
-                    child: const Card(
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Column(
-                          children: <Widget>[
-                            Text(
-                              "Bus Name: XYZ",
-                            ),
-                            SizedBox(width: 10),
-                            Text(
-                              "Time: 5:00",
-                            ),
-                          ],
+            child: Obx(
+              () => ListView.builder(
+                itemCount: controller.filteredBusList.length,
+                itemBuilder: (context, index) {
+                  final bus = controller.filteredBusList[index];
+                  return ListTile(
+                    title: InkWell(
+                      onTap: () {
+                        controller.loginBtn();
+                      },
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                "Bus Name: ${bus['name']}",
+                              ),
+                              const SizedBox(width: 10),
+                              Text(
+                                "Time: ${bus['time']}",
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
           ),
         ],

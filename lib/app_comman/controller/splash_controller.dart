@@ -13,8 +13,8 @@ class SplashController extends GetxController {
 
   Future<void> loading() async {
     Timer(const Duration(seconds: 2), () {
-      Get.to(LoginScrrenBloc());
-     // Get.toNamed(AppRoutes.loginscreen);
+      //Get.to(LoginScrrenBloc());
+      Get.toNamed(AppRoutes.loginscreen);
     });
   }
 }

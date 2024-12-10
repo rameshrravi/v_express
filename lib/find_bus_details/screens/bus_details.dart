@@ -6,38 +6,54 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:v_express/find_bus_details/controller/search_bus_controller.dart';
 
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:v_express/find_bus_details/controller/search_bus_controller.dart';
+
 class BusDetailsScreen extends GetWidget<SearchbusController> {
   BusDetailsScreen({super.key});
-  int activeStep = 0;
-  int activeStep2 = 0;
-  int reachedStep = 0;
-  int upperBound = 5;
-  double progress = 0.2;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bus Details'),
       ),
-      body: SingleChildScrollView(
-        child: EasyStepper(
-            direction: Axis.vertical,
-            activeStep: activeStep,
-            steps: [
-              EasyStep(
-                customStep: ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: Opacity(
-                    opacity: activeStep >= 0 ? 1 : 0.3,
-                    child: Image.asset('assets/1.png'),
-                  ),
-                ),
-                customTitle: const Text(
-                  'Dash 1',
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ]),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Bus Name"',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "sas",
+              style: TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              'Destination:',
+              style: TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              'Departure Time: ',
+              style: TextStyle(fontSize: 16),
+            ),
+            const Divider(height: 20, thickness: 2),
+            Text(
+              'Routes Crossed:',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+           
+          
+          
+          ],
+        ),
       ),
     );
   }
