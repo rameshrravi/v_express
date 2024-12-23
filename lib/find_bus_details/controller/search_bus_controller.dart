@@ -3,59 +3,137 @@ import 'package:get/get.dart';
 import 'package:v_express/find_bus_details/screens/bus_details.dart';
 import 'package:v_express/routes/app_routes.dart';
 
+
 class SearchbusController extends GetxController {
-  TextEditingController districtController = TextEditingController();
-  TextEditingController sourceController = TextEditingController();
-  TextEditingController destinationController = TextEditingController();
+ final districtSearchController = TextEditingController();
+  final startPointSearchController = TextEditingController();
+  final endPointSearchController = TextEditingController();
 
-  RxString district = ''.obs;
-  RxString source = ''.obs;
-  RxString destination = ''.obs;
-
-  RxList<Map<String, dynamic>> busList = <Map<String, dynamic>>[
-    {
-      'name': 'Bus A',
-      'district': 'Chennai',
-      'source': 'Place A',
-      'destination': 'Place B',
-      'time': '10:00 AM',
-      'routes': ['Stop 1', 'Stop 2', 'Stop 3']
-    },
-    {
-      'name': 'Bus B',
-      'district': 'Coimbatore',
-      'source': 'Place C',
-      'destination': 'Place D',
-      'time': '11:00 AM',
-      'routes': ['Stop 4', 'Stop 5', 'Stop 6']
-    },
-    // Add more bus details as needed
+  // Observable lists for all data
+  final districts = [
+    'Mumbai District',
+    'Delhi District',
+    'Bangalore Urban',
+    'Chennai District',
+    'Hyderabad District',
+    'Kolkata District'
   ].obs;
 
-  RxList<Map<String, dynamic>> filteredBusList = <Map<String, dynamic>>[].obs;
+  final startPoints = [
+    'Central Station',
+    'Airport Terminal',
+    'City Center Bus Stop',
+    'Metro Station',
+    'Mall Terminal',
+    'Highway Junction'
+  ].obs;
 
-  RxMap<String, dynamic> selectedBus = RxMap<String, dynamic>();
+  final endPoints = [
+    'Beach Road Terminal',
+    'Hill Station Stop',
+    'Market Complex',
+    'University Gate',
+    'Industrial Area',
+    'Tech Park'
+  ].obs;
+
+  // Observable lists for filtered results
+  final filteredDistricts = <String>[].obs;
+  final filteredStartPoints = <String>[].obs;
+  final filteredEndPoints = <String>[].obs;
+
+  // Selected values
+  final selectedDistrict = RxString('');
+  final selectedStartPoint = RxString('');
+  final selectedEndPoint = RxString('');
+
+  // Visibility flags for dropdowns
+  final isDistrictDropdownVisible = false.obs;
+  final isStartPointDropdownVisible = false.obs;
+  final isEndPointDropdownVisible = false.obs;
 
   @override
   void onInit() {
     super.onInit();
-    everAll([district, source, destination], (_) => filterBusList());
+    // Initialize filtered lists with all items
+    filteredDistricts.assignAll(districts);
+    filteredStartPoints.assignAll(startPoints);
+    filteredEndPoints.assignAll(endPoints);
+
+    // Add listeners to text controllers
+    setupSearchListeners();
   }
 
-  void filterBusList() {
-    filteredBusList.value = busList.where((bus) {
-      final matchesDistrict = district.value.isEmpty || bus['district']!.toLowerCase().contains(district.value.toLowerCase());
-      final matchesSource = source.value.isEmpty || bus['source']!.toLowerCase().contains(source.value.toLowerCase());
-      final matchesDestination = destination.value.isEmpty || bus['destination']!.toLowerCase().contains(destination.value.toLowerCase());
-      return matchesDistrict && matchesSource && matchesDestination;
-    }).toList();
+  void setupSearchListeners() {
+    districtSearchController.addListener(() {
+      filterDistricts(districtSearchController.text);
+    });
+
+    startPointSearchController.addListener(() {
+      filterStartPoints(startPointSearchController.text);
+    });
+
+    endPointSearchController.addListener(() {
+      filterEndPoints(endPointSearchController.text);
+    });
   }
 
-  void selectBus(Map<String, dynamic> bus) {
-    selectedBus.value = bus;
+  void filterDistricts(String query) {
+    if (query.isEmpty) {
+      filteredDistricts.assignAll(districts);
+    } else {
+      filteredDistricts.assignAll(
+        districts.where((district) => 
+          district.toLowerCase().contains(query.toLowerCase())
+        ).toList()
+      );
+    }
   }
 
-  void loginBtn() {
-    Get.to(BusDetailsScreen());
+  void filterStartPoints(String query) {
+    if (query.isEmpty) {
+      filteredStartPoints.assignAll(startPoints);
+    } else {
+      filteredStartPoints.assignAll(
+        startPoints.where((point) => 
+          point.toLowerCase().contains(query.toLowerCase())
+        ).toList()
+      );
+    }
+  }
+
+  void filterEndPoints(String query) {
+    if (query.isEmpty) {
+      filteredEndPoints.assignAll(endPoints);
+    } else {
+      filteredEndPoints.assignAll(
+        endPoints.where((point) => 
+          point.toLowerCase().contains(query.toLowerCase())
+        ).toList()
+      );
+    }
+  }
+
+  void clearAll() {
+    districtSearchController.clear();
+    startPointSearchController.clear();
+    endPointSearchController.clear();
+    selectedDistrict.value = '';
+    selectedStartPoint.value = '';
+    selectedEndPoint.value = '';
+    filteredDistricts.assignAll(districts);
+    filteredStartPoints.assignAll(startPoints);
+    filteredEndPoints.assignAll(endPoints);
+  }
+
+  @override
+  void dispose() {
+    districtSearchController.dispose();
+    startPointSearchController.dispose();
+    endPointSearchController.dispose();
+    super.dispose();
+  }
+    void onPressSearch() {
+    Get.toNamed(AppRoutes.busListScreen);
   }
 }

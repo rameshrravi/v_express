@@ -65,7 +65,7 @@ class LoginScreen extends GetWidget<LoginController> {
                   padding: const EdgeInsets.only(top: 3, left: 3),
                   child: ElevatedButton(
                     onPressed: () {
-                      controller.onPressLogin();
+                      controller.loginBtn();
                     },
                     style: ElevatedButton.styleFrom(
                       shape: const StadiumBorder(),

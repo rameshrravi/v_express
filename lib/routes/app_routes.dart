@@ -7,6 +7,8 @@ import 'package:v_express/app_comman/binding/splash_binding.dart';
 import 'package:v_express/app_comman/screens/splash_screen.dart';
 import 'package:v_express/find_bus_details/binding/searchbus_binding.dart';
 import 'package:v_express/find_bus_details/screens/bus_details.dart';
+import 'package:v_express/find_bus_details/screens/bus_list_screen.dart';
+import 'package:v_express/find_bus_details/screens/bus_tracking_screen.dart';
 import 'package:v_express/find_bus_details/screens/search_bus.dart';
 import 'package:v_express/home/binding/home_binding.dart';
 import 'package:v_express/home/screens/home_screen.dart';
@@ -23,7 +25,8 @@ class AppRoutes {
   static String signupScreen = '/signup';
   static String searchBusScreen = '/SearchBusScreen';
   static String busDetails = '/busDetails';
-  
+  static String busListScreen = '/busListScreen';
+  static String busTrackingScreen = '/BusTrackingScreen';
 
   static List<GetPage> pages = [
     GetPage(
@@ -71,6 +74,21 @@ class AppRoutes {
      GetPage(
       name: busDetails,
       page: () => BusDetailsScreen(),
+      bindings: [
+        
+      ],
+    ),
+    GetPage(
+      name: busListScreen,
+      page: () => BusListScreen(),
+      bindings: [
+        
+      ],
+    ),
+
+     GetPage(
+      name: busTrackingScreen,
+      page: () => BusTrackingScreen(),
       bindings: [
         
       ],

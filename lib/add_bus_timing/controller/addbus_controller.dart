@@ -4,110 +4,102 @@ import 'package:get/get.dart';
 import 'package:v_express/routes/app_routes.dart';
 
 class AddbusController extends GetxController {
-  TextEditingController busName = TextEditingController();
-  TextEditingController busStartFrom = TextEditingController();
-  TextEditingController busEnd = TextEditingController();
-  TextEditingController fromTime = TextEditingController();
-  TextEditingController toTime = TextEditingController();
-
-
-  RxList<Map<String, String>> routes = <Map<String, String>>[].obs;
-  TimeOfDay selectedTime = TimeOfDay.now();
-  RxInt selectedIndex = 0.obs;
-
-  @override
-  void onInit() {}
-  void loginBtn() {
-    Get.toNamed(AppRoutes.homeScreen);
+  final locationList = [
+    'Ariyalur', 'Chennai', 'Coimbatore', 'Cuddalore', 'Dharmapuri', 
+    'Dindigul', 'Erode', 'Kallakurichi', 'Kanchipuram', 'Kanyakumari', 
+    'Karur', 'Krishnagiri', 'Madurai', 'Nagapattinam', 'Namakkal', 
+    'Nilgiris', 'Perambalur', 'Pudukkottai', 'Ramanathapuram', 'Salem', 
+    'Sivaganga', 'Thanjavur', 'Theni', 'Thoothukudi', 'Tiruchirappalli', 
+    'Tirunelveli', 'Tiruppur', 'Tiruvallur', 'Tiruvannamalai', 'Tiruvarur', 
+    'Vellore', 'Viluppuram', 'Virudhunagar'
+  ].obs;
+  
+  final selectedLocation = ''.obs;
+  final busNameController = TextEditingController();
+  
+  final startLocationController = TextEditingController();
+  final endLocationController = TextEditingController();
+  final startDate = DateTime.now().obs;
+  final startTime = TimeOfDay.now().obs;
+  final endDate = DateTime.now().obs;
+  final endTime = TimeOfDay.now().obs;
+  
+  final routes = <RouteInfo>[].obs;
+  final formKey = GlobalKey<FormState>();
+  
+  void addNewRoute() {
+    routes.add(RouteInfo(
+      routeName: '',
+      time: TimeOfDay.now(),
+    ));
   }
-
-  Future<void> showTimepickerMethod(BuildContext context) async {
-    final TimeOfDay? pickedTime = await showTimePicker(
-      context: context,
-      initialTime: selectedTime,
-    );
-    if (pickedTime != null && pickedTime != selectedTime) {
-      selectedTime = pickedTime;
-      toTime.text = selectedTime.format(context);
-    }
-    update();
-  }
-
-  Future<void> showTimepickerFrom(BuildContext context, int index) async {
-    final TimeOfDay? pickedTime = await showTimePicker(
-      context: context,
-      initialTime: selectedTime,
-    );
-    if (pickedTime != null && pickedTime != selectedTime) {
-      selectedTime = pickedTime;
-      if (index == 1) {
-        toTime.text = selectedTime.format(context);
-      } else if (index == 0) {
-        fromTime.text = selectedTime.format(context);
-      }
-    }
-    update();
-  }
-
-  void addRoute() {
-    if (busStartFrom.text.isNotEmpty && fromTime.text.isNotEmpty) {
-      routes.add({
-        'routeName': busStartFrom.text,
-        'time': fromTime.text,
-      });
-      busStartFrom.clear();
-      fromTime.clear();
-    }
-  }
-
+  
   void removeRoute(int index) {
     routes.removeAt(index);
   }
-
   
-
-  void saveBusDetails() async {
-  final String busName = this.busName.text;
-  final String startTime = this.fromTime.text;
-  final String endTime = this.toTime.text;
-
-  final Map<String, String> busDetails = {
-    'busName': busName,
-    'startTime': startTime,
-    'endTime': endTime,
-  };
-
-  final String apiUrl = 'https://yourapiendpoint.com/saveBusDetails'; // Replace with your actual API endpoint
-
+  bool validateForm() {
+    if (formKey.currentState?.validate() ?? false) {
+      if (selectedLocation.value.isEmpty) {
+        Get.snackbar('Error', 'Please select a location');
+        return false;
+      }
+      if (startLocationController.text.isEmpty) {
+        Get.snackbar('Error', 'Please enter start location');
+        return false;
+      }
+      if (endLocationController.text.isEmpty) {
+        Get.snackbar('Error', 'Please enter end location');
+        return false;
+      }
+      if (routes.isEmpty) {
+        Get.snackbar('Error', 'Please add at least one route');
+        return false;
+      }
+      return true;
+    }
+    return false;
+  }
   
-  void saveBusDetails() async {
-    final String busName = this.busName.text;
-    final String startTime = this.fromTime.text;
-    final String endTime = this.toTime.text;
-  
-    final Map<String, String> busDetails = {
-      'busName': busName,
-      'startTime': startTime,
-      'endTime': endTime,
-    };
-  
-    final String apiUrl = 'https://yourapiendpoint.com/saveBusDetails'; // Replace with your actual API endpoint
-  
-    // try {
-    //   Response response = await Dio().post(
-    //     apiUrl,
-    //     options: Options(headers: {'Content-Type': 'application/json'}),
-    //     data: busDetails,
-    //   );
-  
-    //   if (response.statusCode == 200) {
-    //     print('Bus Details Saved Successfully');
-    //   } else {
-    //     print('Failed to save bus details: ${response.statusCode}');
-    //   }
-    // } catch (e) {
-    //   print('Error occurred while saving bus details: $e');
-    // }
+  void saveRouteDetails() {
+    if (validateForm()) {
+      final data = {
+        'location': selectedLocation.value,
+        'busName': busNameController.text,
+        'startLocation': startLocationController.text,
+        'endLocation': endLocationController.text,
+        'startDateTime': DateTime(
+          startDate.value.year,
+          startDate.value.month,
+          startDate.value.day,
+          startTime.value.hour,
+          startTime.value.minute,
+        ).toIso8601String(),
+        'endDateTime': DateTime(
+          endDate.value.year,
+          endDate.value.month,
+          endDate.value.day,
+          endTime.value.hour,
+          endTime.value.minute,
+        ).toIso8601String(),
+        'routes': routes.map((route) => {
+          'routeName': route.routeName,
+          'time': '${route.time.hour}:${route.time.minute}',
+        }).toList(),
+      };
+      
+      print('Sending data to server: $data');
+      Get.snackbar('Success', 'Route details saved successfully');
+    }
   }
 }
+
+class RouteInfo {
+  String routeName;
+  TimeOfDay time;
+  
+  RouteInfo({
+    required this.routeName,
+    required this.time,
+  });
 }
