@@ -16,6 +16,9 @@ import 'package:v_express/login_signup/binding/login_binding.dart';
 import 'package:v_express/login_signup/binding/sign_up_binding.dart';
 import 'package:v_express/login_signup/screens/login_screen.dart';
 import 'package:v_express/login_signup/screens/signup_screen.dart';
+import 'package:v_express/profile/binding/profile_binding.dart';
+import 'package:v_express/profile/screens/profile_screen.dart';
+import 'package:v_express/reward_points_and_profile/screeens/reward_points_screeen.dart';
 
 class AppRoutes {
   static String splashscreen = '/splashscreen';
@@ -27,6 +30,8 @@ class AppRoutes {
   static String busDetails = '/busDetails';
   static String busListScreen = '/busListScreen';
   static String busTrackingScreen = '/BusTrackingScreen';
+  static String rewardPointsScreen = '/RewardPointsScreen';
+  static String profileScreen = '/ProfileScreen';
 
   static List<GetPage> pages = [
     GetPage(
@@ -90,6 +95,21 @@ class AppRoutes {
       name: busTrackingScreen,
       page: () => BusTrackingScreen(),
       bindings: [
+        
+      ],
+    ),
+    GetPage(
+      name: rewardPointsScreen,
+      page: () => RewardPointsScreen(),
+      bindings: [
+        
+      ],
+    ),
+    GetPage(
+      name: profileScreen,
+      page: () => ProfileScreen(),
+      bindings: [
+        ProfileBinding(),
         
       ],
     ),

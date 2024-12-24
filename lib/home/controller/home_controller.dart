@@ -12,4 +12,12 @@ class HomeController extends GetxController {
   void onPressSearch() {
     Get.toNamed(AppRoutes.searchBusScreen);
   }
+
+  void onPressRewardPoints() {
+    Get.toNamed(AppRoutes.rewardPointsScreen);
+  }
+
+  void onPressProfile() {
+    Get.toNamed(AppRoutes.profileScreen);
+  }
 }
